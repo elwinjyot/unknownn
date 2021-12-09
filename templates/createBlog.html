@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static %}
+
+
+
+{% block 'main' %}
+<section id="popup">
+  <div class="popup_wrapper">
+    <h2>Are you sure?</h2>
+    <p>Your blog will go online as soon as you publish it!</p>
+    <div class="btn-group">
+      <button class="confirm" data-state="yes">Yes</button>
+      <button class="confirm" data-state="no">No</button>
+    </div>
+  </div>
+</section>
+<section id="playground">
+  {% csrf_token %}
+  <div class="playground-wrapper">
+    <div class="cr-blog-heading">
+      <div class="cr-wrap">
+        <h2>Start of something new 😃</h2>
+        <p>Click on the gray area to start.</p>
+      </div>
+    </div>
+    <div class="publish_blog">
+      <button style="margin-right: 1rem;">
+        <input type="file" id="up-thumb" /><p id="up-thumb-text">UPLOAD THUMBNAIL</p><i
+          style="width: 14px;height: 14px;margin-left: 8px;" data-feather="upload-cloud"></i>
+      </button>
+      <button type="submit" id="draft-blog" style="margin-right: 1rem;">DRAFT <i
+          style="width: 14px;height: 14px;margin-left: 8px;" data-feather="archive"></i></button>
+      <button type="submit" id="save-blog">PUBLISH <i style="width: 14px;height: 14px;margin-left: 8px;"
+          data-feather="arrow-right"></i></button>
+    </div>
+    <div id="editorjs">
+      <div class="title">
+        <input required type="text" placeholder="An awesome title here." id="blog-title" />
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,164 @@
+{
+	"e-book-writing": {
+		"title": "E-Book Writing",
+		"code": "e-book-writing",
+		"intro": "Nonfiction ebooks for ex Personal Growth, Self-help, personality development, Business, psychology",
+		"description": "Ebooks are the new way of learning as well as of sharing knowledge via a digital medium. Many readers are starting to prefer ebooks more than paperbacks and knowledgeable people from any field are using ebooks to share their knowledge and also to make a source of income. So, why not you? But writing one takes lots of hassle, that’s where we come to help you to create your ebook on your specific topic and genre. We will draft-write-edit-rewrite your ebook thoroughly till it delivers your aimed message and engages your audience from start to end.",
+		"niche": "We currently write only non-fiction ebooks on topics mentioned below: Self-help, Spirituality, Business & Money, Guides & Tutorials, Personal Finance, and more",
+		"plans": [
+			{
+				"title": "Basic",
+				"details": [
+					{ "feat": "Upto to 5,000 words", "avail": true },
+					{ "feat": "In-depth topic research", "avail": true },
+					{
+						"feat": "InFormatting | Writing | Editing | Rewriting",
+						"avail": true
+					},
+					{ "feat": "2x revisions", "avail": true },
+					{
+						"feat": "Free: Attractive font and back cover",
+						"avail": true
+					},
+					{
+						"feat": "Creative layout",
+						"avail": false
+					}
+				],
+				"pricing": {
+					"INR": 5129,
+					"USD": 69
+				}
+			},
+			{
+				"title": "Standard",
+				"details": [
+					{ "feat": "Upto to 8,000 words", "avail": true },
+					{ "feat": "In-depth topic research", "avail": true },
+					{
+						"feat": "InFormatting | Writing | Editing | Rewriting",
+						"avail": true
+					},
+					{ "feat": "Unlimited revisions", "avail": true },
+					{
+						"feat": "Free: Attractive font and back cover",
+						"avail": true
+					},
+					{
+						"feat": "Creative layout",
+						"avail": true
+					}
+				],
+				"pricing": {
+					"INR": 7360,
+					"USD": 99
+				}
+			},
+			{
+				"title": "Premium",
+				"details": [
+					{ "feat": "Upto to 10,000 words", "avail": true },
+					{ "feat": "In-depth topic research", "avail": true },
+					{
+						"feat": "InFormatting | Writing | Editing | Rewriting",
+						"avail": true
+					},
+					{ "feat": "Unlimited revisions", "avail": true },
+					{
+						"feat": "Free: Attractive font and back cover",
+						"avail": true
+					},
+					{
+						"feat": "Creative layout",
+						"avail": true
+					}
+				],
+				"pricing": {
+					"INR": 8847,
+					"USD": 119
+				}
+			}
+		]
+	},
+	"podcast-script-writing": {
+		"title": "Podcast Script Writing",
+		"code": "podcast-script-writing",
+		"intro": "Nonfiction ebooks for ex Personal Growth, Self-help, personality development, Business, psychology",
+		"description": "Ebooks are the new way of learning as well as of sharing knowledge via a digital medium. Many readers are starting to prefer ebooks more than paperbacks and knowledgeable people from any field are using ebooks to share their knowledge and also to make a source of income. So, why not you? But writing one takes lots of hassle, that’s where we come to help you to create your ebook on your specific topic and genre. We will draft-write-edit-rewrite your ebook thoroughly till it delivers your aimed message and engages your audience from start to end.",
+		"niche": "We currently write only non-fiction ebooks on topics mentioned below: Self-help, Spirituality, Business & Money, Guides & Tutorials, Personal Finance, and more",
+		"plans": [
+			{
+				"title": "Basic",
+				"details": [
+					{ "feat": "Upto to 5,000 words", "avail": true },
+					{ "feat": "In-depth topic research", "avail": true },
+					{
+						"feat": "InFormatting | Writing | Editing | Rewriting",
+						"avail": true
+					},
+					{ "feat": "2x revisions", "avail": true },
+					{
+						"feat": "Free: Attractive font and back cover",
+						"avail": true
+					},
+					{
+						"feat": "Creative layout",
+						"avail": false
+					}
+				],
+				"pricing": {
+					"INR": 5129,
+					"USD": 69
+				}
+			},
+			{
+				"title": "Standard",
+				"details": [
+					{ "feat": "Upto to 8,000 words", "avail": true },
+					{ "feat": "In-depth topic research", "avail": true },
+					{
+						"feat": "InFormatting | Writing | Editing | Rewriting",
+						"avail": true
+					},
+					{ "feat": "Unlimited revisions", "avail": true },
+					{
+						"feat": "Free: Attractive font and back cover",
+						"avail": true
+					},
+					{
+						"feat": "Creative layout",
+						"avail": true
+					}
+				],
+				"pricing": {
+					"INR": 7360,
+					"USD": 99
+				}
+			},
+			{
+				"title": "Premium",
+				"details": [
+					{ "feat": "Upto to 10,000 words", "avail": true },
+					{ "feat": "In-depth topic research", "avail": true },
+					{
+						"feat": "InFormatting | Writing | Editing | Rewriting",
+						"avail": true
+					},
+					{ "feat": "Unlimited revisions", "avail": true },
+					{
+						"feat": "Free: Attractive font and back cover",
+						"avail": true
+					},
+					{
+						"feat": "Creative layout",
+						"avail": true
+					}
+				],
+				"pricing": {
+					"INR": 8847,
+					"USD": 119
+				}
+			}
+		]
+	}
+}

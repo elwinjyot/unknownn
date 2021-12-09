@@ -1,0 +1,1262 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  min-height: 100vh;
+  background: #393939;
+  background: radial-gradient(circle, #393939 19%, #2a2a2a 54%, #1f1f1f 100%);
+}
+
+.navbar-active {
+  background-color: #030303;
+}
+
+#navigation-container {
+  height: auto;
+  max-height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  position: fixed;
+  left: 0;
+  z-index: 8;
+}
+
+#navigation-container nav {
+  width: 100%;
+  padding: 0.6rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #fe75702f;
+  -webkit-transition: background-color 0.2s ease-out 0s;
+  transition: background-color 0.2s ease-out 0s;
+}
+
+#navigation-container nav .navbar__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#navigation-container nav .navbar__left #logo {
+  margin-right: 1rem;
+}
+
+#navigation-container nav .navbar__left #logo img {
+  height: 100%;
+  width: auto;
+  max-width: 1.8rem;
+}
+
+#navigation-container nav .navbar__left p {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 1.2vw, 1.4rem);
+}
+
+#navigation-container nav .nav_btns {
+  max-height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-y: hidden;
+}
+
+#navigation-container nav .nav_btns .btn {
+  padding-top: 0.3rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#navigation-container nav .nav_btns .btn img {
+  width: 100%;
+  height: auto;
+  max-width: 1.4rem;
+}
+
+#navigation-container nav .large {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  background-color: transparent;
+  width: 25%;
+  padding-bottom: 0rem !important;
+}
+
+#navigation-container nav .large li {
+  width: auto;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 1;
+  font-size: clamp(0.6rem, 0.8rem, 1rem);
+  padding: 0 !important;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  border-radius: 4px;
+}
+
+#navigation-container nav .large li:hover {
+  background-color: #fe7570;
+}
+
+#navigation-container nav .large li:nth-child(even) {
+  padding: 0;
+}
+
+#navigation-container nav .large li:last-child {
+  padding-bottom: 0;
+}
+
+#navigation-container nav .large li a {
+  width: auto;
+  padding: 0;
+}
+
+#navigation-container nav .large li a:hover {
+  background-color: transparent;
+}
+
+#navigation-container .navbar__right {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  width: 100vw;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  list-style-type: none;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 1.2em;
+  background-color: #1f1f1f;
+  padding-bottom: 0.6rem;
+}
+
+#navigation-container .navbar__right li {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  -webkit-transform: translateX(-90%);
+          transform: translateX(-90%);
+  cursor: pointer;
+  font-size: clamp(0.6rem, 1rem, 1.2rem);
+  padding: 0rem 0.6rem;
+}
+
+#navigation-container .navbar__right li:first-child {
+  padding-top: 0.6rem;
+}
+
+#navigation-container .navbar__right li:nth-child(even) {
+  padding: 0.6rem;
+}
+
+#navigation-container .navbar__right li a {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+#navigation-container .navbar__right li a:hover {
+  background-color: #fe7570;
+}
+
+#navigation-container .navbar__right li a:focus {
+  background-color: #fe7570;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container .service-details {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 8;
+  background-color: #1414149c;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.container .service-details .service-details-wrap {
+  color: #ececec;
+  font-family: "Ubuntu", sans-serif;
+  padding: 1.6rem 1.4rem;
+  width: 90%;
+  min-height: 75vh;
+  max-height: 90vh;
+  border-radius: 6px 6px 0px 0px;
+  background-color: #1f1f1f;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -webkit-column-gap: .6rem;
+          column-gap: .6rem;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.container .service-details .service-details-wrap .sect-1 {
+  width: 86%;
+  padding-top: 0.8rem;
+}
+
+.container .service-details .service-details-wrap .sect-1 h2 {
+  margin-bottom: .8rem;
+}
+
+.container .service-details .service-details-wrap .sect-1 p {
+  margin-bottom: .6rem;
+  font-size: clamp(0.6em, 0.8em, 1.4em);
+}
+
+.container .service-details .service-details-wrap .sect-1 h3 {
+  margin-bottom: .4rem;
+  font-size: clamp(0.6em, 0.98em, 1.2em);
+}
+
+.container .service-details .service-details-wrap .sect-2 {
+  background-color: #1a1a1a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 6px;
+  padding: 0.8rem 1.4rem;
+  overflow: hidden;
+}
+
+.container .service-details .service-details-wrap .sect-2 h2 {
+  padding: 0rem 1.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .controls {
+  width: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  top: 45%;
+  z-index: 8;
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .controls button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .slider__wrapper {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (100%)[3];
+      grid-template-columns: repeat(3, 100%);
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .slider__wrapper .slide {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .slider__wrapper .slide .slide__hold {
+  max-width: 82%;
+  height: 100%;
+  background-color: #1f1f1f;
+  padding: 0.8rem;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .slider__wrapper .slide .slide__hold .title {
+  font-size: clamp(1rem, 1.4rem, 1.6rem);
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .slider__wrapper .slide .slide__hold .price {
+  margin: 0.4rem 0rem;
+  font-weight: 700;
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .slider__wrapper .slide .slide__hold .hire-btn {
+  width: 100%;
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .slider__wrapper .slide .slide__hold .hire-btn button {
+  padding: .5rem;
+  width: 100%;
+  background-color: #fe7570;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .slider__wrapper .slide .slide__hold ul {
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 0.8rem;
+}
+
+.container .service-details .service-details-wrap .sect-2 .slider .slider__wrapper .slide .slide__hold ul li {
+  width: 100%;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
+  font-size: .8em;
+  background-color: #fe75702f;
+  color: #fe7570;
+  padding: .4rem .8rem;
+}
+
+.container #home-section {
+  min-height: 100vh;
+  background-image: url("../../images/main-home.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.container #home-section svg {
+  position: absolute;
+  bottom: 8vh;
+  height: 4rem;
+  width: 4rem;
+}
+
+.container #home-section .main-header {
+  width: 80%;
+}
+
+.container #home-section .main-header h2 {
+  font-weight: 500;
+  font-size: clamp(1rem, 1.8vw, 2rem);
+  font-family: "Lora", serif;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  -webkit-transform: translateY(-12px);
+          transform: translateY(-12px);
+}
+
+.container #home-section .main-header #headp-2 {
+  font-size: clamp(2.6rem, 3vw, 8rem);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.container #home-section .main-header #headp-1 {
+  font-size: clamp(2rem, 2.8vw, 6rem);
+  font-weight: 400;
+}
+
+.container #service-section {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: transparent;
+  color: white;
+}
+
+.container #service-section #service-heading {
+  border-radius: 6px;
+  padding: 4.5rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #1f1f1f;
+  background: url(../../images/main-home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-y: bottom;
+  margin-bottom: 0.6rem;
+}
+
+.container #service-section #service-heading h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 3vw, 4.5rem);
+  color: #ececec;
+}
+
+.container #service-section #services-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 0.6rem;
+  grid-row-gap: 0.6rem;
+}
+
+.container #service-section #services-wrapper .podcast {
+  background-image: url("../../images/podcast.jpg");
+}
+
+.container #service-section #services-wrapper .service {
+  cursor: pointer;
+  width: 100%;
+  height: 24rem;
+  max-height: 26rem;
+  background-color: #1f1f1f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+}
+
+.container #service-section #services-wrapper .service .service_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 6px;
+  width: 100%;
+  height: 12rem;
+  padding-top: 2rem;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #fe7570), color-stop(40%, #fe7570e1), color-stop(60%, #fe75709d), color-stop(80%, #fe75705b), to(#fe757000));
+  background: linear-gradient(180deg, #fe7570 11%, #fe7570e1 40%, #fe75709d 60%, #fe75705b 80%, #fe757000 100%);
+}
+
+.container #service-section #services-wrapper .service p {
+  font-size: clamp(0.8rem, 1vw, 2rem);
+  max-width: 80%;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+}
+
+.container #service-section #services-wrapper .service h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 2vw);
+}
+
+.container #service-section #services-wrapper .service .controls a {
+  color: white;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+
+.container #tail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.container #tail #tail-wrap {
+  width: 100%;
+}
+
+.container #nav-points {
+  padding: 0.6rem 0.6rem 0rem 0.6rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  row-gap: 0.6rem;
+}
+
+.container #nav-points #about-section {
+  border-radius: 6px;
+  color: white;
+  padding: 3rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #1f1f1f;
+}
+
+.container #nav-points #about-section .heading-about {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 2.6vw, 6rem);
+  color: rgba(19, 19, 19, 0.794);
+  padding-bottom: 1rem;
+  color: #fe7570;
+}
+
+.container #nav-points #about-section p {
+  line-height: 1.35em;
+  letter-spacing: 1px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: clamp(0.8rem, 1vw, 1.6rem);
+  font-weight: 300;
+  padding: 0.4rem 0rem 0rem 0rem;
+  word-break: keep-all;
+}
+
+.container #nav-points #about-section p a {
+  color: #fe7570;
+  font-weight: 700;
+}
+
+.container #nav-points #contact {
+  border-radius: 6px;
+  background-color: #1f1f1f;
+  padding: 3.4rem 2rem;
+}
+
+.container #nav-points #contact #contact-wrapper #contact-form h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 2.6vw, 6rem);
+  color: #fe7570;
+}
+
+.container #nav-points #contact #contact-wrapper #contact-form p {
+  color: #ececec;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.8rem, 1vw, 1.6rem);
+  margin: 0.6rem 0rem;
+}
+
+.container #nav-points #contact #contact-wrapper #contact-form .input-grp {
+  padding: 0.5rem 0rem;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container #nav-points #contact #contact-wrapper #contact-form .input-grp input {
+  padding: 0.8rem 1rem;
+  border: none;
+  width: 100%;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  background-color: #ececec;
+  color: #050509de;
+  border-radius: 6px;
+}
+
+.container #nav-points #contact #contact-wrapper #contact-form .input-grp input:focus {
+  outline: none;
+}
+
+.container #nav-points #contact #contact-wrapper #contact-form .input-grp button {
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 0rem;
+  background-color: #fe7570;
+  color: #ececec;
+  font-family: "Ubunut", sans-serif;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.container #nav-points #contact #contact-wrapper #contact-form .input-grp:last-child {
+  padding-bottom: 0rem;
+}
+
+footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #1f1f1f;
+  padding: 1rem 2rem;
+  color: #ececec;
+}
+
+footer #footer-wrapper {
+  width: 100%;
+}
+
+footer #footer-wrapper section {
+  width: 100%;
+  padding: 1rem 0rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+footer #footer-wrapper #part-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer #footer-wrapper #part-1 h2 {
+  font-weight: 700;
+  font-size: clamp(2em, 2.2em, 2.6em);
+  color: #fe7570;
+}
+
+footer #footer-wrapper #part-1 p {
+  font-weight: 300;
+}
+
+footer #footer-wrapper #part-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+  font-weight: 300;
+  font-size: clamp(0.2em, 0.9em, 1.2em);
+}
+
+footer #footer-wrapper #part-2 div {
+  line-height: 1.6em;
+}
+
+footer #footer-wrapper #part-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: center;
+  font-size: clamp(0.4em, 0.8em, 1.2em);
+}
+
+#blogs-holder {
+  width: 100%;
+  padding: 0.6rem;
+  padding-top: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#blogs-holder .blogs-wrapper {
+  width: 100%;
+}
+
+#blogs-holder .recomms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: center;
+  width: 100%;
+  border-radius: 6px;
+  border: 1.3px solid rgba(255, 255, 255, 0.18);
+  background-image: url(../../images/cr-blog-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+}
+
+#blogs-holder .recomms .recomms-wrapper {
+  padding: 2rem 0rem;
+  width: 100%;
+  border-radius: 6px;
+  background-color: #0809115d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  color: #ececec;
+}
+
+#blogs-holder .recomms .recomms-wrapper h2 {
+  font-size: clamp(1rem, 1.8em, 2.6rem);
+  padding-bottom: 0.6rem;
+  letter-spacing: 0.2rem;
+}
+
+#blogs-holder .recomms .recomms-wrapper p {
+  letter-spacing: 0.2rem;
+  font-size: clamp(0.6rem, 0.8em, 1.4rem);
+}
+
+#blogs-holder .recomms .recomms-wrapper .add-blog {
+  padding-top: 1rem;
+}
+
+#blogs-holder .recomms .recomms-wrapper .add-blog a {
+  text-decoration: none;
+}
+
+#blogs-holder .recomms .recomms-wrapper .add-blog button {
+  padding: 0.6rem 1.4rem;
+  border: 2px solid #fe7570;
+  background-color: transparent;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#blogs-holder .recomms .recomms-wrapper .add-blog button svg {
+  width: 1.2rem;
+  margin-left: 0.4rem;
+}
+
+#blogs-holder .recomms .recomms-wrapper .add-blog button:hover {
+  background-color: #fe75702f;
+}
+
+#blogs-holder .all-blogs {
+  padding: 1rem 0rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 0.6rem;
+  width: 100%;
+}
+
+#blogs-holder .all-blogs a {
+  text-decoration: none;
+}
+
+#blogs-holder .all-blogs .blog-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+#blogs-holder .all-blogs .blog-item .thumbnail {
+  background: url(../../images/placeholder.jpg);
+  background-size: cover;
+  background-position-y: center;
+  height: 18vh;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: #ececec;
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.4em;
+  overflow: hidden;
+}
+
+#blogs-holder .all-blogs .blog-item .thumbnail .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 160px;
+  padding: 0rem 0.6rem;
+  padding-bottom: 0.6rem;
+  background: linear-gradient(10deg, #fe7570 11%, #fe7570c0 20%, #fe757081 40%, #fe757038 55%, #fe757000 64%);
+}
+
+#blogs-holder .all-blogs .blog-item .thumbnail h2 {
+  font-weight: 600;
+  font-size: clamp(0.6em, 1.3em, 1.6em);
+}
+
+#blogs-holder .all-blogs .blog-item .thumbnail p {
+  font-weight: 300;
+  font-size: clamp(0.6em, 0.8em, 1em);
+}
+
+#playground {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 14vh;
+}
+
+#playground .playground-wrapper {
+  width: 90%;
+  padding-top: 0.6rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#playground .playground-wrapper .cr-blog-heading {
+  font-family: "Ubuntu", sans-serif;
+  background-image: url(../../images/blogs-bg.jpg);
+  border: 1.3px solid rgba(255, 255, 255, 0.18);
+  background-size: cover;
+  border-radius: 6px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #ececec;
+  width: 100%;
+}
+
+#playground .playground-wrapper .cr-blog-heading .cr-wrap {
+  width: 100%;
+  height: 26vh;
+  background-color: #0809115d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#playground .playground-wrapper .cr-blog-heading h2 {
+  font-size: clamp(0.6em, 2.4em, 2.6em);
+}
+
+#playground .playground-wrapper .cr-blog-heading p {
+  margin-top: 1rem;
+  font-size: clamp(0.6em, 1em, 1.2em);
+}
+
+#playground .playground-wrapper .publish_blog {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background-color: #141414;
+  padding: 1rem 2rem;
+  width: 85%;
+  border-radius: 6px 6px 0px 0px;
+}
+
+#playground .playground-wrapper .publish_blog button {
+  border-radius: 6px;
+  border: none;
+  background-color: #fe7570;
+  color: white;
+  cursor: pointer;
+  font-family: "Ubuntu", sans-serif;
+  padding: 0.6rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+#playground .playground-wrapper .publish_blog button input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#playground .playground-wrapper .publish_blog button:first-child {
+  justify-self: flex-start;
+}
+
+#playground .playground-wrapper #editorjs {
+  width: 100%;
+  min-height: 30vh;
+  height: auto;
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.4rem 1.4rem 0.8rem;
+  background-color: #c5c5c5;
+  border-radius: 4px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+#playground .playground-wrapper #editorjs .title {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: center;
+}
+
+#playground .playground-wrapper #editorjs .title input {
+  width: 55%;
+  font-size: 2rem;
+  border: none;
+  border-bottom: 2px solid #1f1f1f;
+  background-color: transparent;
+  padding: 1rem 0rem;
+  -webkit-transition: border-bottom-color 0.2s ease 0s;
+  transition: border-bottom-color 0.2s ease 0s;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+}
+
+#playground .playground-wrapper #editorjs .title input:focus {
+  border-bottom-color: #fe7570;
+  outline: none;
+}
+
+#popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1414149c;
+}
+
+#popup .popup_wrapper {
+  opacity: 0;
+  background-color: #1f1f1f;
+  padding: 2.4rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 6px;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  -webkit-transform: scale(0.86);
+          transform: scale(0.86);
+}
+
+#popup .popup_wrapper h2 {
+  margin-bottom: 0.4rem;
+}
+
+#popup .popup_wrapper .btn-group {
+  padding-top: 1rem;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 0.6rem;
+          column-gap: 0.6rem;
+}
+
+#popup .popup_wrapper .btn-group button {
+  font-family: "Ubuntu", sans-serif;
+  border: none;
+  background-color: #fe7570;
+  color: white;
+  border-radius: 6px;
+  padding: 0.6rem 0rem;
+  cursor: pointer;
+}
+
+#popup .popup_wrapper .btn-group button:last-child {
+  color: white;
+  background-color: transparent;
+  border: 1.4px solid #fe7570;
+}
+
+#popup .popup_wrapper .btn-group button:hover {
+  background-color: #e26460;
+}
+
+.blog-holder {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 4vh;
+  color: #ececec;
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+}
+
+.blog-holder .blog-wrapper {
+  width: 95%;
+  padding: 2rem 0rem;
+  border-radius: 6px;
+  background-color: #1f1f1f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.blog-holder .blog-wrapper .blog {
+  width: 90%;
+}
+
+.blog-holder .blog-wrapper .blog h1 {
+  font-size: clamp(1em, 1.8em, 2em);
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #fe7570;
+}
+
+.blog-holder .blog-wrapper .blog .ps {
+  color: #fe7570;
+}
+
+.blog-holder .parser-holder {
+  padding-top: 0.8rem;
+  padding-bottom: 1.4rem;
+}
+
+.blog-holder .parser-holder p {
+  line-height: 24px;
+  font-weight: 300;
+}
+
+.blog-holder .parser-holder a {
+  color: #fe7570;
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+}
+
+.blog-holder .parser-holder .image-full {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.blog-holder .parser-holder img {
+  border-radius: 6px;
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block 'main' %}
+<section class="blog-holder">
+    <div class="blog-wrapper">
+        <div class="blog">
+            <h1>{{blog.title}}</h1>
+            <div class="parser-holder" data-json="{{blog.content}}"></div>
+            <p class="ps">Written by: {{blog.author}}</p>
+            <p class="ps">{{ blog.date_published }}</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let jsonObj = $(".parser-holder").attr("data-json")
+    const parser = new EdjsHTML();
+    let html = parser.parse(jsonObj)
+    $(".parser-holder").html(html)
+</script>
+{% endblock %}
