@@ -1,32 +1,61 @@
 let indextl = gsap.timeline();
 
 $(".service").click(function () {
-	let name = $(this).attr("data-name");
-	let url = `get-service-details/${name}`;
+  let name = $(this).attr("data-name");
+  let url = `get-service-details/${name}`;
 
-	$.get(url, function (data) {
-		if (data["status"] !== 404) {
-			renderHTML(data);
-		} else {
-		}
-	});
+  $.get(url, function (data) {
+    if (data["status"] !== 404) {
+      renderHTML(data);
+    } else {
+    }
+  });
 
-	indextl
-		.to($(".service-details"), {
-			display: "flex",
-			duration: 0.1,
-		})
-		.to(".service-details-wrap", {
-			duration: 0.8,
-			y: "0%",
-			ease: Expo.easeInOut,
-		});
+  indextl
+    .to($(".service-details"), {
+      display: "flex",
+      duration: 0.1,
+    })
+    .to($(".service-details"), {
+      opacity: 1,
+      duration: 0.3,
+    })
+    .to(".service-details-wrap", {
+      duration: 0.8,
+      y: "0%",
+      ease: Expo.easeInOut,
+    });
+});
+
+function closeDetails() {
+  indextl
+    .to(".service-details-wrap", {
+      duration: 0.4,
+      y: "100%",
+      ease: Expo.easeInOut,
+    })
+    .to($(".service-details"), {
+      opacity: 0,
+      duration: 0.2,
+    })
+    .to($(".service-details"), {
+      display: "none",
+      duration: 0.1,
+    });
+}
+
+$(".cross_btn_large_cont").click(function () {
+  closeDetails();
 });
 
 function renderHTML(e) {
-	e = JSON.parse(e);
-	let base = `<div class="sect-1">
-    <h2>${e["title"]}</h2>
+  e = JSON.parse(e);
+  let base = `<div class="sect-1">
+    <h2>${e["title"]} 
+	<div class="cross_btn" onclick="closeDetails()">
+		<span></span>
+		<span></span>
+	</div></h2>
     <div class="intro">
         <p>${e["intro"]}</p>
     </div>
@@ -50,12 +79,12 @@ function renderHTML(e) {
       </div>
     </div>
   </div>`;
-	$(".service-details-wrap").html(base);
-	feather.replace();
-	for (let i = 0; i < e["plans"].length; i++) {
-		const element = e["plans"][i];
-		$(".slider__wrapper").append(
-			`
+  $(".service-details-wrap").html(base);
+  feather.replace();
+  for (let i = 0; i < e["plans"].length; i++) {
+    const element = e["plans"][i];
+    $(".slider__wrapper").append(
+      `
           <div class="slide">
             <div class="slide__hold">
                 <p class="title">${element["title"]}</p>
@@ -66,63 +95,62 @@ function renderHTML(e) {
 				</div>
             </div>
           </div>`
-		);
-		let tle = element["title"];
-		for (let i = 0; i < element["details"].length; i++) {
-			const el = element["details"][i];
-			console.log(`#${tle}`);
-            if (el["avail"]) {
-                $(`#${tle}`).append(`
+    );
+    let tle = element["title"];
+    for (let i = 0; i < element["details"].length; i++) {
+      const el = element["details"][i];
+      if (el["avail"]) {
+        $(`#${tle}`).append(`
                     <li style="background-color: #75fe702f; color: #75fe70;">${el["feat"]}</li>
                 `);
-            } else {
-                $(`#${tle}`).append(`
+      } else {
+        $(`#${tle}`).append(`
                     <li>${el["feat"]}</li>
                 `);
-            }
-		}
-	}
+      }
+    }
+  }
 }
 
 // Slider
 let pos = 0;
 
 function slideRight() {
-	pos = pos - 100;
+  pos = pos - 100;
 
-	if (pos > -300) {
-		slide(pos);
-	} else {
-		pos = -200;
-		tl.to(".slider__wrapper", {
-			duration: 0.4,
-			x: "-206%",
-			repeat: 1,
-			yoyo: true,
-			ease: Expo.easeInOut,
-		});
-	}
+  if (pos > -300) {
+    slide(pos);
+  } else {
+    pos = -200;
+    tl.to(".slider__wrapper", {
+      duration: 0.4,
+      x: "-206%",
+      repeat: 1,
+      yoyo: true,
+      ease: Expo.easeInOut,
+    });
+  }
 }
 
 function slideLeft() {
-	if (pos == 0) {
-		tl.to(".slider__wrapper", {
-			duration: 0.4,
-			x: "6%",
-			repeat: 1,
-			yoyo: true,
-			ease: Expo.easeInOut,
-		});
-	} else {
-		pos = pos + 100;
-		slide(pos);
-	}
+  if (pos == 0) {
+    tl.to(".slider__wrapper", {
+      duration: 0.4,
+      x: "6%",
+      repeat: 1,
+      yoyo: true,
+      ease: Expo.easeInOut,
+    });
+  } else {
+    pos = pos + 100;
+    slide(pos);
+  }
 }
 
 function slide(pos) {
-	tl.to(".slider__wrapper", {
-		x: `${pos}%`,
-		duration: 0.5,
-		ease: Expo.easeInOut,
-	});
+  tl.to(".slider__wrapper", {
+    x: `${pos}%`,
+    duration: 0.5,
+    ease: Expo.easeInOut,
+  });
 }

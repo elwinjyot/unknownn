@@ -244,23 +244,74 @@ body {
   width: 100%;
   height: 100vh;
   z-index: 8;
-  background-color: #1414149c;
   display: none;
+  opacity: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  backdrop-filter: blur(8px) saturate(195%);
+  -webkit-backdrop-filter: blur(8px) saturate(195%);
+  background-color: #141414b4;
+}
+
+.container .service-details .cross_btn_large_cont {
+  position: absolute;
+  top: 14vw;
+  left: 48%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.container .service-details .cross_btn_large_cont:hover {
+  background-color: #fcfcfc5d;
+}
+
+.container .service-details .cross_btn_large_cont .cross_btn_large {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left: 18px;
+}
+
+.container .service-details .cross_btn_large_cont .cross_btn_large span {
+  width: 4px;
+  height: 100%;
+  background-color: white;
+  display: block;
+}
+
+.container .service-details .cross_btn_large_cont .cross_btn_large span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.container .service-details .cross_btn_large_cont .cross_btn_large span:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .container .service-details .service-details-wrap {
   color: #ececec;
   font-family: "Ubuntu", sans-serif;
   padding: 1.6rem 1.4rem;
+  max-height: 80vh;
   width: 90%;
-  min-height: 75vh;
-  max-height: 90vh;
   border-radius: 6px 6px 0px 0px;
   background-color: #1f1f1f;
   display: -ms-grid;
@@ -269,28 +320,75 @@ body {
       grid-template-columns: 100%;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-  -webkit-column-gap: .6rem;
-          column-gap: .6rem;
+  -webkit-column-gap: 0.6rem;
+          column-gap: 0.6rem;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .container .service-details .service-details-wrap .sect-1 {
-  width: 86%;
-  padding-top: 0.8rem;
+  width: 100%;
+  padding: 0.8rem 0rem;
+  overflow-y: scroll;
 }
 
 .container .service-details .service-details-wrap .sect-1 h2 {
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.container .service-details .service-details-wrap .sect-1 h2 .cross_btn {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  cursor: pointer;
+}
+
+.container .service-details .service-details-wrap .sect-1 h2 .cross_btn span {
+  width: 4px;
+  height: 20px;
+  background-color: white;
+  display: block;
+}
+
+.container .service-details .service-details-wrap .sect-1 h2 .cross_btn span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.container .service-details .service-details-wrap .sect-1 h2 .cross_btn span:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .container .service-details .service-details-wrap .sect-1 p {
-  margin-bottom: .6rem;
-  font-size: clamp(0.6em, 0.8em, 1.4em);
+  line-height: 1.3em;
+  width: 90%;
+  margin-bottom: 0.6rem;
+  font-size: clamp(0.6em, 1em, 1.4em);
 }
 
 .container .service-details .service-details-wrap .sect-1 h3 {
-  margin-bottom: .4rem;
+  width: 30%;
+  border-bottom: 4px solid #fe7570;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.6rem;
   font-size: clamp(0.6em, 0.98em, 1.2em);
 }
 
@@ -398,7 +496,7 @@ body {
 }
 
 .container .service-details .service-details-wrap .sect-2 .slider .slider__wrapper .slide .slide__hold .hire-btn button {
-  padding: .5rem;
+  padding: 0.5rem;
   width: 100%;
   background-color: #fe7570;
   color: white;
@@ -419,10 +517,10 @@ body {
   width: 100%;
   margin-bottom: 0.8rem;
   border-radius: 6px;
-  font-size: .8em;
+  font-size: 0.8em;
   background-color: #fe75702f;
   color: #fe7570;
-  padding: .4rem .8rem;
+  padding: 0.4rem 0.8rem;
 }
 
 .container #home-section {
@@ -569,7 +667,7 @@ body {
 }
 
 .container #service-section #services-wrapper .service p {
-  font-size: clamp(0.8rem, 1vw, 2rem);
+  font-size: clamp(0.8em, 1em, 1.4em);
   max-width: 80%;
   text-align: center;
   margin-bottom: 1rem;
@@ -582,7 +680,7 @@ body {
   margin-bottom: 1rem;
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
-  font-size: clamp(1rem, 2vw, 2vw);
+  font-size: clamp(1em, 1.6em, 1.8em);
 }
 
 .container #service-section #services-wrapper .service .controls a {
@@ -928,7 +1026,6 @@ footer #footer-wrapper #part-3 {
 }
 
 #blogs-holder .all-blogs .blog-item .thumbnail {
-  background: url(../../images/placeholder.jpg);
   background-size: cover;
   background-position-y: center;
   height: 18vh;
@@ -1252,7 +1349,7 @@ footer #footer-wrapper #part-3 {
 
 .blog-holder .parser-holder .image-full {
   width: 100%;
-  padding-bottom: 1rem;
+  padding: 1rem 0rem;
 }
 
 .blog-holder .parser-holder img {
@@ -1260,3 +1357,4 @@ footer #footer-wrapper #part-3 {
   max-width: 100%;
   max-height: 100%;
 }
+/*# sourceMappingURL=main.css.map */

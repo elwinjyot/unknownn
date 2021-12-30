@@ -2,976 +2,1054 @@
 @import "_mixins";
 
 * {
-	margin: 0;
-	box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: auto;
-	min-height: 100vh;
-	background: rgb(57, 57, 57);
-	background: radial-gradient(
-		circle,
-		rgba(57, 57, 57, 1) 19%,
-		rgba(42, 42, 42, 1) 54%,
-		#1f1f1f 100%
-	);
-	// background-color: #141414;
-	// overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  min-height: 100vh;
+  background: rgb(57, 57, 57);
+  background: radial-gradient(
+    circle,
+    rgba(57, 57, 57, 1) 19%,
+    rgba(42, 42, 42, 1) 54%,
+    #1f1f1f 100%
+  );
+  // background-color: #141414;
+  // overflow-x: hidden;
 }
 
 .navbar-active {
-	background-color: #030303;
+  background-color: #030303;
 }
 
 #navigation-container {
-	height: auto;
-	max-height: 8vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	color: white;
-	position: fixed;
-	left: 0;
-	z-index: 8;
+  height: auto;
+  max-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  position: fixed;
+  left: 0;
+  z-index: 8;
 
-	nav {
-		width: 100%;
-		padding: 0.6rem 2rem;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		background: $primary-1;
-		transition: background-color 0.2s ease-out 0s;
+  nav {
+    width: 100%;
+    padding: 0.6rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $primary-1;
+    transition: background-color 0.2s ease-out 0s;
 
-		.navbar__left {
-			display: flex;
-			align-items: center;
+    .navbar__left {
+      display: flex;
+      align-items: center;
 
-			#logo {
-				margin-right: 1rem;
+      #logo {
+        margin-right: 1rem;
 
-				img {
-					height: 100%;
-					width: auto;
-					max-width: 1.8rem;
-				}
-			}
-			p {
-				font-family: "Ubuntu", sans-serif;
-				font-weight: 500;
-				font-size: clamp(0.9rem, 1.2vw, 1.4rem);
-			}
-		}
+        img {
+          height: 100%;
+          width: auto;
+          max-width: 1.8rem;
+        }
+      }
+      p {
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 500;
+        font-size: clamp(0.9rem, 1.2vw, 1.4rem);
+      }
+    }
 
-		.nav_btns {
-			max-height: 30px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			overflow-y: hidden;
+    .nav_btns {
+      max-height: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: hidden;
 
-			.btn {
-				padding-top: 0.3rem;
-				border: none;
-				background-color: transparent;
-				cursor: pointer;
+      .btn {
+        padding-top: 0.3rem;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
 
-				img {
-					width: 100%;
-					height: auto;
-					max-width: 1.4rem;
-				}
-			}
-		}
-		.large {
-			display: none;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
-			transform: scaleY(1);
-			background-color: transparent;
-			width: min(25%, 36%);
-			padding-bottom: 0rem !important;
+        img {
+          width: 100%;
+          height: auto;
+          max-width: 1.4rem;
+        }
+      }
+    }
+    .large {
+      display: none;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      transform: scaleY(1);
+      background-color: transparent;
+      width: min(25%, 36%);
+      padding-bottom: 0rem !important;
 
-			li {
-				width: auto;
-				transform: translateX(0%);
-				opacity: 1;
-				font-size: clamp(0.6rem, 0.8rem, 1rem);
-				padding: 0 !important;
-				transition: background-color 0.2s ease;
-				border-radius: 4px;
+      li {
+        width: auto;
+        transform: translateX(0%);
+        opacity: 1;
+        font-size: clamp(0.6rem, 0.8rem, 1rem);
+        padding: 0 !important;
+        transition: background-color 0.2s ease;
+        border-radius: 4px;
 
-				&:hover {
-					background-color: $secondary;
-				}
-				&:nth-child(even) {
-					padding: 0;
-				}
-				&:last-child {
-					padding-bottom: 0;
-				}
-				a {
-					width: auto;
-					padding: 0;
-					&:hover {
-						background-color: transparent;
-					}
-				}
-			}
-		}
-	}
-	.navbar__right {
-		transform-origin: top;
-		transform: scaleY(0);
-		width: 100vw;
-		height: auto;
-		display: flex;
-		padding-left: 0;
-		flex-direction: column;
-		align-items: flex-start;
-		list-style-type: none;
-		font-family: "Ubuntu", sans-serif;
-		letter-spacing: 1px;
-		font-weight: 300;
-		font-size: 1.2em;
-		background-color: $primary;
-		padding-bottom: 0.6rem;
+        &:hover {
+          background-color: $secondary;
+        }
+        &:nth-child(even) {
+          padding: 0;
+        }
+        &:last-child {
+          padding-bottom: 0;
+        }
+        a {
+          width: auto;
+          padding: 0;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  .navbar__right {
+    transform-origin: top;
+    transform: scaleY(0);
+    width: 100vw;
+    height: auto;
+    display: flex;
+    padding-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style-type: none;
+    font-family: "Ubuntu", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 1.2em;
+    background-color: $primary;
+    padding-bottom: 0.6rem;
 
-		li {
-			width: 100%;
-			height: auto;
-			opacity: 0;
-			transform: translateX(-90%);
-			cursor: pointer;
-			font-size: clamp(0.6rem, 1rem, 1.2rem);
-			padding: 0rem 0.6rem;
+    li {
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      transform: translateX(-90%);
+      cursor: pointer;
+      font-size: clamp(0.6rem, 1rem, 1.2rem);
+      padding: 0rem 0.6rem;
 
-			&:first-child {
-				padding-top: 0.6rem;
-			}
-			&:nth-child(even) {
-				padding: 0.6rem;
-			}
-			a {
-				display: inline-block;
-				width: 100%;
-				padding: 1rem 1.2rem;
-				text-decoration: none;
-				color: white;
-				border-radius: 6px;
-				background-color: transparent;
+      &:first-child {
+        padding-top: 0.6rem;
+      }
+      &:nth-child(even) {
+        padding: 0.6rem;
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        padding: 1rem 1.2rem;
+        text-decoration: none;
+        color: white;
+        border-radius: 6px;
+        background-color: transparent;
 
-				&:hover {
-					background-color: $secondary;
-				}
-				&:focus {
-					background-color: $secondary;
-				}
-			}
-		}
-	}
+        &:hover {
+          background-color: $secondary;
+        }
+        &:focus {
+          background-color: $secondary;
+        }
+      }
+    }
+  }
 }
 
 .container {
-	width: 100%;
-	min-height: 100vh;
+  width: 100%;
+  min-height: 100vh;
 
-	.service-details {
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		z-index: 8;
-		background-color: #1414149c;
-		display: none;
-		justify-content: center;
-		align-items: flex-end;
+  .service-details {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 8;
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: flex-end;
+    backdrop-filter: blur(8px) saturate(195%);
+    -webkit-backdrop-filter: blur(8px) saturate(195%);
+    background-color: #141414b4;
 
-		.service-details-wrap {
-			color: $bg;
-			font-family: "Ubuntu", sans-serif;
-			padding: 1.6rem 1.4rem;
-			width: 90%;
-			min-height: 75vh;
-			max-height: 90vh;
-			border-radius: 6px 6px 0px 0px;
-			background-color: $primary;
-			display: grid;
-			grid-template-columns: 100%;
-			grid-template-rows: auto auto;
-			column-gap: .6rem;
-			transform: translateY(100%);
+    .cross_btn_large_cont {
+      position: absolute;
+      top: 14vw;
+      left: 48%;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
 
-			.sect-1 {
-				width: 86%;
-				padding-top: 0.8rem;
-				overflow: scroll;
+      &:hover {
+        background-color: #fcfcfc5d;
+      }
+      .cross_btn_large {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        left: 18px;
 
-				h2 {
-					margin-bottom: .8rem;
-				}
-				p {
-					line-height: 2.5px;
-					margin-bottom: .6rem;
-					font-size: clamp(.6em, 1em, 1.4em);
-				}
-				h3 {
-					margin-bottom: .4rem;
-					font-size: clamp(.6em, .98em, 1.2em);
-				}
-			}
-			.sect-2 {
-				background-color: #1a1a1a;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				border-radius: 6px;
-				padding: 0.8rem 1.4rem;
-				overflow: hidden;
+        span {
+          width: 4px;
+          height: 100%;
+          background-color: white;
+          display: block;
 
-				h2 {
-					padding: 0rem 1.5rem;
-					margin-bottom: 1.4rem;
-				}
+          &:first-child {
+            transform: rotate(45deg);
+          }
+          &:last-child {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+    .service-details-wrap {
+      color: $bg;
+      font-family: "Ubuntu", sans-serif;
+      padding: 1.6rem 1.4rem;
+      max-height: 80vh;
+      width: 90%;
+      border-radius: 6px 6px 0px 0px;
+      background-color: $primary;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto;
+      column-gap: 0.6rem;
+      transform: translateY(100%);
+      overflow-y: scroll;
+      overflow-x: hidden;
 
-				.slider {
-					min-width: 100%;
-					height: 100%;
-					position: relative;
+      .sect-1 {
+        width: 100%;
+        padding: 0.8rem 0rem;
+        overflow-y: scroll;
 
-					.controls {
-						width: 100%;
-						position: absolute;
-						display: flex;
-						justify-content: space-between;
-						top: 45%;
-						z-index: 8;
+        h2 {
+          margin-bottom: 0.8rem;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 1.2rem;
 
-						button {
-							border: none;
-							padding: 0;
-							background-color: transparent;
-							color: white;
-							cursor: pointer;
-						}
-					}
-					.slider__wrapper {
-						height: 100%;
-						display: grid;
-						grid-template-columns: repeat(3, 100%);
+          .cross_btn {
+            width: 28px;
+            height: 28px;
+            position: relative;
+            cursor: pointer;
 
-						.slide {
-							width: 100%;
-							height: 100%;
-							min-height: 100%;
-							display: flex;
-							justify-content: center;
-							align-items: center;
+            span {
+              width: 4px;
+              height: 20px;
+              background-color: white;
+              display: block;
 
-							.slide__hold {
-								max-width: 82%;
-								height: 100%;
-								background-color: $primary;
-								padding: 0.8rem;
-								border-radius: 6px;
-								display: flex;
-								flex-direction: column;
-								align-items: center;
+              &:first-child {
+                transform: rotate(45deg);
+              }
+              &:last-child {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                transform: rotate(-45deg);
+              }
+            }
+          }
+        }
+        p {
+          line-height: 1.3em;
+          width: 90%;
+          margin-bottom: 0.6rem;
+          font-size: clamp(0.6em, 1em, 1.4em);
+        }
+        h3 {
+          width: 30%;
+          border-bottom: 4px solid $secondary;
+          padding-bottom: 0.2rem;
+          margin-bottom: 0.6rem;
+          font-size: clamp(0.6em, 0.98em, 1.2em);
+        }
+      }
+      .sect-2 {
+        background-color: #1a1a1a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 6px;
+        padding: 0.8rem 1.4rem;
+        overflow: hidden;
 
-								.title {
-									font-size: clamp(1rem, 1.4rem, 1.6rem);
-								}
-								.price {
-									margin: 0.4rem 0rem;
-									font-weight: 700;
-								}
-								.hire-btn {
-									width: 100%;
+        h2 {
+          padding: 0rem 1.5rem;
+          margin-bottom: 1.4rem;
+        }
 
-									button {
-										padding: .5rem;
-										width: 100%;
-										background-color: $secondary;
-										color: white;
-										border: none;
-										border-radius: 6px;
-										cursor: pointer;
-									}
-								}
-								ul {
-									list-style-type: none;
-									width: 100%;
-									margin: 0;
-									padding: 0;
-									margin-top: 0.8rem;
+        .slider {
+          min-width: 100%;
+          height: 100%;
+          position: relative;
 
-									li {
-										width: 100%;
-										margin-bottom: 0.8rem;
-										border-radius: 6px;
-										font-size: .8em;
-										background-color: $primary-1;
-										color: $secondary;
-										padding: .4rem .8rem;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+          .controls {
+            width: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            top: 45%;
+            z-index: 8;
 
-	#home-section {
-		min-height: 100vh;
-		background-image: url("../../images/main-home.jpg");
-		background-size: cover;
-		background-attachment: fixed;
-		background-position-x: center;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		position: relative;
+            button {
+              border: none;
+              padding: 0;
+              background-color: transparent;
+              color: white;
+              cursor: pointer;
+            }
+          }
+          .slider__wrapper {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 100%);
 
-		svg {
-			position: absolute;
-			bottom: 8vh;
-			height: 4rem;
-			width: 4rem;
-		}
-		.main-header {
-			width: 80%;
+            .slide {
+              width: 100%;
+              height: 100%;
+              min-height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
 
-			h2 {
-				font-weight: 500;
-				font-size: clamp(1rem, 1.8vw, 2rem);
-				font-family: "Lora", serif;
-				text-align: center;
-				color: white;
-				opacity: 0;
-				transform: translateY(-12px);
-			}
-			#headp-2 {
-				font-size: clamp(2.6rem, 3vw, 8rem);
-				font-style: italic;
-				font-weight: 500;
-			}
-			#headp-1 {
-				font-size: clamp(2rem, 2.8vw, 6rem);
-				font-weight: 400;
-			}
-		}
-	}
+              .slide__hold {
+                max-width: 82%;
+                height: 100%;
+                background-color: $primary;
+                padding: 0.8rem;
+                border-radius: 6px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
-	#service-section {
-		width: 100%;
-		padding: 0.6rem;
-		background-color: transparent;
-		color: white;
+                .title {
+                  font-size: clamp(1rem, 1.4rem, 1.6rem);
+                }
+                .price {
+                  margin: 0.4rem 0rem;
+                  font-weight: 700;
+                }
+                .hire-btn {
+                  width: 100%;
 
-		#service-heading {
-			border-radius: 6px;
-			padding: 4.5rem 0rem;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: $primary;
-			background: url(../../images/main-home.jpg);
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-attachment: fixed;
-			background-position-y: bottom;
-			margin-bottom: 0.6rem;
+                  button {
+                    padding: 0.5rem;
+                    width: 100%;
+                    background-color: $secondary;
+                    color: white;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                  }
+                }
+                ul {
+                  list-style-type: none;
+                  width: 100%;
+                  margin: 0;
+                  padding: 0;
+                  margin-top: 0.8rem;
 
-			h1 {
-				font-family: "Ubuntu", sans-serif;
-				font-weight: 700;
-				font-size: clamp(2rem, 3vw, 4.5rem);
-				color: $bg;
-			}
-		}
-		#services-wrapper {
-			display: grid;
-			grid-template-columns: repeat(1, 1fr);
-			grid-column-gap: 0.6rem;
-			grid-row-gap: 0.6rem;
+                  li {
+                    width: 100%;
+                    margin-bottom: 0.8rem;
+                    border-radius: 6px;
+                    font-size: 0.8em;
+                    background-color: $primary-1;
+                    color: $secondary;
+                    padding: 0.4rem 0.8rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
-			.podcast {
-				background-image: url("../../images/podcast.jpg");
-			}
+  #home-section {
+    min-height: 100vh;
+    background-image: url("../../images/main-home.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 
-			.service {
-				cursor: pointer;
-				width: 100%;
-				height: 24rem;
-				max-height: 26rem;
-				background-color: $primary;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				background-size: cover;
-				background-position: center;
-				border-radius: 6px;
+    svg {
+      position: absolute;
+      bottom: 8vh;
+      height: 4rem;
+      width: 4rem;
+    }
+    .main-header {
+      width: 80%;
 
-				.service_wrap {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					border-radius: 6px;
-					width: 100%;
-					height: 12rem;
-					padding-top: 2rem;
-					background: linear-gradient(
-						180deg,
-						#fe7570 11%,
-						#fe7570e1 40%,
-						#fe75709d 60%,
-						#fe75705b 80%,
-						#fe757000 100%
-					);
-				}
-				p {
-					font-size: clamp(0.8rem, 1vw, 2rem);
-					max-width: 80%;
-					text-align: center;
-					margin-bottom: 1rem;
-					font-family: "Ubuntu", sans-serif;
-					font-weight: 300;
-				}
-				h2 {
-					text-align: center;
-					margin-bottom: 1rem;
-					font-family: "Ubuntu", sans-serif;
-					font-weight: 700;
-					font-size: clamp(1rem, 2vw, 2vw);
-				}
-				.controls {
-					a {
-						color: white;
-						text-decoration: none;
-						font-family: "Ubuntu", sans-serif;
-						font-weight: 500;
-					}
-				}
-			}
-		}
-	}
+      h2 {
+        font-weight: 500;
+        font-size: clamp(1rem, 1.8vw, 2rem);
+        font-family: "Lora", serif;
+        text-align: center;
+        color: white;
+        opacity: 0;
+        transform: translateY(-12px);
+      }
+      #headp-2 {
+        font-size: clamp(2.6rem, 3vw, 8rem);
+        font-style: italic;
+        font-weight: 500;
+      }
+      #headp-1 {
+        font-size: clamp(2rem, 2.8vw, 6rem);
+        font-weight: 400;
+      }
+    }
+  }
 
-	#tail {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
+  #service-section {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: transparent;
+    color: white;
 
-		#tail-wrap {
-			width: 100%;
-		}
-	}
+    #service-heading {
+      border-radius: 6px;
+      padding: 4.5rem 0rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary;
+      background: url(../../images/main-home.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position-y: bottom;
+      margin-bottom: 0.6rem;
 
-	#nav-points {
-		padding: 0.6rem 0.6rem 0rem 0.6rem;
-		display: grid;
-		grid-template-columns: 1fr;
-		row-gap: 0.6rem;
+      h1 {
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 700;
+        font-size: clamp(2rem, 3vw, 4.5rem);
+        color: $bg;
+      }
+    }
+    #services-wrapper {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-column-gap: 0.6rem;
+      grid-row-gap: 0.6rem;
 
-		#about-section {
-			border-radius: 6px;
-			color: white;
-			padding: 3rem 2rem;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: flex-start;
-			background-color: $primary;
+      .podcast {
+        background-image: url("../../images/podcast.jpg");
+      }
 
-			.heading-about {
-				font-family: "Ubuntu", sans-serif;
-				font-weight: 700;
-				font-size: clamp(2rem, 2.6vw, 6rem);
-				color: rgba(19, 19, 19, 0.794);
-				padding-bottom: 1rem;
-				color: $secondary;
-			}
-			p {
-				line-height: 1.35em;
-				letter-spacing: 1px;
-				font-family: "Ubuntu", sans-serif;
-				font-size: clamp(0.8rem, 1vw, 1.6rem);
-				font-weight: 300;
-				padding: 0.4rem 0rem 0rem 0rem;
-				word-break: keep-all;
+      .service {
+        cursor: pointer;
+        width: 100%;
+        height: 24rem;
+        max-height: 26rem;
+        background-color: $primary;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        border-radius: 6px;
 
-				a {
-					color: $secondary;
-					font-weight: 700;
-				}
-			}
-		}
-		#contact {
-			border-radius: 6px;
-			background-color: $primary;
-			padding: 3.4rem 2rem;
+        .service_wrap {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border-radius: 6px;
+          width: 100%;
+          height: 12rem;
+          padding-top: 2rem;
+          background: linear-gradient(
+            180deg,
+            #fe7570 11%,
+            #fe7570e1 40%,
+            #fe75709d 60%,
+            #fe75705b 80%,
+            #fe757000 100%
+          );
+        }
+        p {
+          font-size: clamp(0.8em, 1em, 1.4em);
+          max-width: 80%;
+          text-align: center;
+          margin-bottom: 1rem;
+          font-family: "Ubuntu", sans-serif;
+          font-weight: 300;
+        }
+        h2 {
+          text-align: center;
+          margin-bottom: 1rem;
+          font-family: "Ubuntu", sans-serif;
+          font-weight: 700;
+          font-size: clamp(1em, 1.6em, 1.8em);
+        }
+        .controls {
+          a {
+            color: white;
+            text-decoration: none;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
 
-			#contact-wrapper {
-				#contact-form {
-					h2 {
-						font-family: "Ubuntu", sans-serif;
-						font-weight: 700;
-						font-size: clamp(2rem, 2.6vw, 6rem);
-						color: $secondary;
-					}
-					p {
-						color: $bg;
-						font-family: "Ubuntu", sans-serif;
-						font-weight: 300;
-						font-size: clamp(0.8rem, 1vw, 1.6rem);
-						margin: 0.6rem 0rem;
-					}
-					.input-grp {
-						padding: 0.5rem 0rem;
-						width: auto;
-						display: flex;
-						justify-content: center;
+  #tail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 
-						input {
-							padding: 0.8rem 1rem;
-							border: none;
-							width: 100%;
-							font-family: "Ubuntu", sans-serif;
-							font-weight: 500;
-							background-color: $bg;
-							color: #050509de;
-							border-radius: 6px;
+    #tail-wrap {
+      width: 100%;
+    }
+  }
 
-							&:focus {
-								outline: none;
-							}
-						}
-						button {
-							padding: 0.8rem 1.8rem;
-							border: none;
-							border-radius: 0rem;
-							background-color: $secondary;
-							color: $bg;
-							font-family: "Ubunut", sans-serif;
-							font-weight: 500;
-							border-radius: 6px;
-							cursor: pointer;
-						}
-						&:last-child {
-							padding-bottom: 0rem;
-						}
-					}
-				}
-			}
-		}
-	}
+  #nav-points {
+    padding: 0.6rem 0.6rem 0rem 0.6rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 0.6rem;
+
+    #about-section {
+      border-radius: 6px;
+      color: white;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: $primary;
+
+      .heading-about {
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 700;
+        font-size: clamp(2rem, 2.6vw, 6rem);
+        color: rgba(19, 19, 19, 0.794);
+        padding-bottom: 1rem;
+        color: $secondary;
+      }
+      p {
+        line-height: 1.35em;
+        letter-spacing: 1px;
+        font-family: "Ubuntu", sans-serif;
+        font-size: clamp(0.8rem, 1vw, 1.6rem);
+        font-weight: 300;
+        padding: 0.4rem 0rem 0rem 0rem;
+        word-break: keep-all;
+
+        a {
+          color: $secondary;
+          font-weight: 700;
+        }
+      }
+    }
+    #contact {
+      border-radius: 6px;
+      background-color: $primary;
+      padding: 3.4rem 2rem;
+
+      #contact-wrapper {
+        #contact-form {
+          h2 {
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 2.6vw, 6rem);
+            color: $secondary;
+          }
+          p {
+            color: $bg;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 300;
+            font-size: clamp(0.8rem, 1vw, 1.6rem);
+            margin: 0.6rem 0rem;
+          }
+          .input-grp {
+            padding: 0.5rem 0rem;
+            width: auto;
+            display: flex;
+            justify-content: center;
+
+            input {
+              padding: 0.8rem 1rem;
+              border: none;
+              width: 100%;
+              font-family: "Ubuntu", sans-serif;
+              font-weight: 500;
+              background-color: $bg;
+              color: #050509de;
+              border-radius: 6px;
+
+              &:focus {
+                outline: none;
+              }
+            }
+            button {
+              padding: 0.8rem 1.8rem;
+              border: none;
+              border-radius: 0rem;
+              background-color: $secondary;
+              color: $bg;
+              font-family: "Ubunut", sans-serif;
+              font-weight: 500;
+              border-radius: 6px;
+              cursor: pointer;
+            }
+            &:last-child {
+              padding-bottom: 0rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 footer {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	background-color: $primary;
-	padding: 1rem 2rem;
-	color: $bg;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $primary;
+  padding: 1rem 2rem;
+  color: $bg;
 
-	#footer-wrapper {
-		width: 100%;
+  #footer-wrapper {
+    width: 100%;
 
-		section {
-			width: 100%;
-			padding: 1rem 0rem;
-			font-family: "Ubuntu", sans-serif;
-		}
-		#part-1 {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
+    section {
+      width: 100%;
+      padding: 1rem 0rem;
+      font-family: "Ubuntu", sans-serif;
+    }
+    #part-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-			h2 {
-				font-weight: 700;
-				font-size: clamp(2em, 2.2em, 2.6em);
-				color: $secondary;
-			}
-			p {
-				font-weight: 300;
-			}
-		}
-		#part-2 {
-			display: flex;
-			flex-direction: column;
-			align-self: center;
-			font-weight: 300;
-			font-size: clamp(0.2em, 0.9em, 1.2em);
+      h2 {
+        font-weight: 700;
+        font-size: clamp(2em, 2.2em, 2.6em);
+        color: $secondary;
+      }
+      p {
+        font-weight: 300;
+      }
+    }
+    #part-2 {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      font-weight: 300;
+      font-size: clamp(0.2em, 0.9em, 1.2em);
 
-			div {
-				line-height: 1.6em;
-			}
-		}
-		#part-3 {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-self: center;
-			font-size: clamp(0.4em, 0.8em, 1.2em);
-		}
-	}
+      div {
+        line-height: 1.6em;
+      }
+    }
+    #part-3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
+      font-size: clamp(0.4em, 0.8em, 1.2em);
+    }
+  }
 }
 #blogs-holder {
-	width: 100%;
-	padding: 0.6rem;
-	padding-top: 8vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  width: 100%;
+  padding: 0.6rem;
+  padding-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-	.blogs-wrapper {
-		width: 100%;
-	}
-	.recomms {
-		display: flex;
-		place-content: center;
-		width: 100%;
-		border-radius: 6px;
-		border: 1.3px solid rgba(255, 255, 255, 0.18);
-		background-image: url(../../images/cr-blog-bg.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
-		height: auto;
+  .blogs-wrapper {
+    width: 100%;
+  }
+  .recomms {
+    display: flex;
+    place-content: center;
+    width: 100%;
+    border-radius: 6px;
+    border: 1.3px solid rgba(255, 255, 255, 0.18);
+    background-image: url(../../images/cr-blog-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
 
-		.recomms-wrapper {
-			padding: 2rem 0rem;
-			width: 100%;
-			border-radius: 6px;
-			background-color: #0809115d;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			font-family: "Ubuntu", sans-serif;
-			color: $bg;
+    .recomms-wrapper {
+      padding: 2rem 0rem;
+      width: 100%;
+      border-radius: 6px;
+      background-color: #0809115d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Ubuntu", sans-serif;
+      color: $bg;
 
-			h2 {
-				font-size: clamp(1rem, 1.8em, 2.6rem);
-				padding-bottom: 0.6rem;
-				letter-spacing: 0.2rem;
-			}
-			p {
-				letter-spacing: 0.2rem;
-				font-size: clamp(0.6rem, 0.8em, 1.4rem);
-			}
-			.add-blog {
-				padding-top: 1rem;
+      h2 {
+        font-size: clamp(1rem, 1.8em, 2.6rem);
+        padding-bottom: 0.6rem;
+        letter-spacing: 0.2rem;
+      }
+      p {
+        letter-spacing: 0.2rem;
+        font-size: clamp(0.6rem, 0.8em, 1.4rem);
+      }
+      .add-blog {
+        padding-top: 1rem;
 
-				a {
-					text-decoration: none;
-				}
-				button {
-					padding: 0.6rem 1.4rem;
-					border: 2px solid $secondary;
-					background-color: transparent;
-					border-radius: 6px;
-					color: white;
-					cursor: pointer;
-					display: flex;
-					align-items: center;
+        a {
+          text-decoration: none;
+        }
+        button {
+          padding: 0.6rem 1.4rem;
+          border: 2px solid $secondary;
+          background-color: transparent;
+          border-radius: 6px;
+          color: white;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
 
-					svg {
-						width: 1.2rem;
-						margin-left: 0.4rem;
-					}
-					&:hover {
-						background-color: $primary-1;
-					}
-				}
-			}
-		}
-	}
-	.all-blogs {
-		padding: 1rem 0rem;
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-gap: 0.6rem;
-		width: 100%;
+          svg {
+            width: 1.2rem;
+            margin-left: 0.4rem;
+          }
+          &:hover {
+            background-color: $primary-1;
+          }
+        }
+      }
+    }
+  }
+  .all-blogs {
+    padding: 1rem 0rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0.6rem;
+    width: 100%;
 
-		a {
-			text-decoration: none;
-		}
-		.blog-item {
-			width: 100%;
-			overflow: hidden;
+    a {
+      text-decoration: none;
+    }
+    .blog-item {
+      width: 100%;
+      overflow: hidden;
 
-			.thumbnail {
-				background: url(../../images/placeholder.jpg);
-				background-size: cover;
-				background-position-y: center;
-				height: 18vh;
-				border-radius: 4px;
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-end;
-				color: $bg;
-				font-family: "Ubuntu", sans-serif;
-				line-height: 1.4em;
-				overflow: hidden;
+      .thumbnail {
+        // background: url(../../images/placeholder.jpg);
+        background-size: cover;
+        background-position-y: center;
+        height: 18vh;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: $bg;
+        font-family: "Ubuntu", sans-serif;
+        line-height: 1.4em;
+        overflow: hidden;
 
-				.text {
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-end;
-					height: 160px;
-					padding: 0rem 0.6rem;
-					padding-bottom: 0.6rem;
-					background: linear-gradient(
-						10deg,
-						#fe7570 11%,
-						#fe7570c0 20%,
-						#fe757081 40%,
-						#fe757038 55%,
-						#fe757000 64%
-					);
-				}
-				h2 {
-					font-weight: 600;
-					font-size: clamp(0.6em, 1.3em, 1.6em);
-				}
-				p {
-					font-weight: 300;
-					font-size: clamp(0.6em, 0.8em, 1em);
-				}
-			}
-		}
-	}
+        .text {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          height: 160px;
+          padding: 0rem 0.6rem;
+          padding-bottom: 0.6rem;
+          background: linear-gradient(
+            10deg,
+            #fe7570 11%,
+            #fe7570c0 20%,
+            #fe757081 40%,
+            #fe757038 55%,
+            #fe757000 64%
+          );
+        }
+        h2 {
+          font-weight: 600;
+          font-size: clamp(0.6em, 1.3em, 1.6em);
+        }
+        p {
+          font-weight: 300;
+          font-size: clamp(0.6em, 0.8em, 1em);
+        }
+      }
+    }
+  }
 }
 
 #playground {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	padding-top: 14vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 14vh;
 
-	.playground-wrapper {
-		width: 90%;
-		padding-top: 0.6rem 1rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+  .playground-wrapper {
+    width: 90%;
+    padding-top: 0.6rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-		.cr-blog-heading {
-			font-family: "Ubuntu", sans-serif;
-			background-image: url(../../images/blogs-bg.jpg);
-			border: 1.3px solid rgba(255, 255, 255, 0.18);
-			background-size: cover;
-			border-radius: 6px;
-			background-position-y: center;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			color: $bg;
-			width: 100%;
+    .cr-blog-heading {
+      font-family: "Ubuntu", sans-serif;
+      background-image: url(../../images/blogs-bg.jpg);
+      border: 1.3px solid rgba(255, 255, 255, 0.18);
+      background-size: cover;
+      border-radius: 6px;
+      background-position-y: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: $bg;
+      width: 100%;
 
-			.cr-wrap {
-				width: 100%;
-				height: 26vh;
-				background-color: #0809115d;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-			}
+      .cr-wrap {
+        width: 100%;
+        height: 26vh;
+        background-color: #0809115d;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-			h2 {
-				font-size: clamp(0.6em, 2.4em, 2.6em);
-			}
-			p {
-				margin-top: 1rem;
-				font-size: clamp(0.6em, 1em, 1.2em);
-			}
-		}
-		.publish_blog {
-			margin-top: 2rem;
-			display: flex;
-			justify-content: flex-end;
-			background-color: #141414;
-			padding: 1rem 2rem;
-			width: 85%;
-			border-radius: 6px 6px 0px 0px;
+      h2 {
+        font-size: clamp(0.6em, 2.4em, 2.6em);
+      }
+      p {
+        margin-top: 1rem;
+        font-size: clamp(0.6em, 1em, 1.2em);
+      }
+    }
+    .publish_blog {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+      background-color: #141414;
+      padding: 1rem 2rem;
+      width: 85%;
+      border-radius: 6px 6px 0px 0px;
 
-			button {
-				border-radius: 6px;
-				border: none;
-				background-color: $secondary;
-				color: white;
-				cursor: pointer;
-				font-family: "Ubuntu", sans-serif;
-				padding: 0.6rem 1rem;
-				display: flex;
-				align-items: center;
-				position: relative;
+      button {
+        border-radius: 6px;
+        border: none;
+        background-color: $secondary;
+        color: white;
+        cursor: pointer;
+        font-family: "Ubuntu", sans-serif;
+        padding: 0.6rem 1rem;
+        display: flex;
+        align-items: center;
+        position: relative;
 
-				input {
-					position: absolute;
-					opacity: 0;
-					cursor: pointer;
-				}
-				&:first-child {
-					justify-self: flex-start;
-				}
-			}
-		}
-		#editorjs {
-			width: 100%;
-			min-height: 30vh;
-			height: auto;
-			margin-bottom: 1rem;
-			padding: 0.6rem 0.4rem 1.4rem 0.8rem;
-			background-color: rgb(197, 197, 197);
-			border-radius: 4px;
-			font-family: "Ubuntu", sans-serif;
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+        &:first-child {
+          justify-self: flex-start;
+        }
+      }
+    }
+    #editorjs {
+      width: 100%;
+      min-height: 30vh;
+      height: auto;
+      margin-bottom: 1rem;
+      padding: 0.6rem 0.4rem 1.4rem 0.8rem;
+      background-color: rgb(197, 197, 197);
+      border-radius: 4px;
+      font-family: "Ubuntu", sans-serif;
 
-			.title {
-				width: 100%;
-				display: flex;
-				place-content: center;
+      .title {
+        width: 100%;
+        display: flex;
+        place-content: center;
 
-				input {
-					width: 55%;
-					font-size: 2rem;
-					border: none;
-					border-bottom: 2px solid $primary;
-					background-color: transparent;
-					padding: 1rem 0rem;
-					transition: border-bottom-color 0.2s ease 0s;
-					font-family: "Ubuntu", sans-serif;
-					font-weight: 600;
+        input {
+          width: 55%;
+          font-size: 2rem;
+          border: none;
+          border-bottom: 2px solid $primary;
+          background-color: transparent;
+          padding: 1rem 0rem;
+          transition: border-bottom-color 0.2s ease 0s;
+          font-family: "Ubuntu", sans-serif;
+          font-weight: 600;
 
-					&:focus {
-						border-bottom-color: $secondary;
-						outline: none;
-					}
-				}
-			}
-		}
-	}
+          &:focus {
+            border-bottom-color: $secondary;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
 }
 
 #popup {
-	width: 100%;
-	height: 100vh;
-	position: fixed;
-	z-index: 9;
-	display: none;
-	justify-content: center;
-	align-items: center;
-	background-color: #1414149c;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #1414149c;
 
-	.popup_wrapper {
-		opacity: 0;
-		background-color: $primary;
-		padding: 2.4rem 2rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		border-radius: 6px;
-		color: white;
-		font-family: "Ubuntu", sans-serif;
-		transform: scale(0.86);
+  .popup_wrapper {
+    opacity: 0;
+    background-color: $primary;
+    padding: 2.4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    transform: scale(0.86);
 
-		h2 {
-			margin-bottom: 0.4rem;
-		}
-		.btn-group {
-			padding-top: 1rem;
-			width: 100%;
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			column-gap: 0.6rem;
+    h2 {
+      margin-bottom: 0.4rem;
+    }
+    .btn-group {
+      padding-top: 1rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 0.6rem;
 
-			button {
-				font-family: "Ubuntu", sans-serif;
-				border: none;
-				background-color: $secondary;
-				color: white;
-				border-radius: 6px;
-				padding: 0.6rem 0rem;
-				cursor: pointer;
+      button {
+        font-family: "Ubuntu", sans-serif;
+        border: none;
+        background-color: $secondary;
+        color: white;
+        border-radius: 6px;
+        padding: 0.6rem 0rem;
+        cursor: pointer;
 
-				&:last-child {
-					color: white;
-					background-color: transparent;
-					border: 1.4px solid $secondary;
-				}
-				&:hover {
-					background-color: #e26460;
-				}
-			}
-		}
-	}
+        &:last-child {
+          color: white;
+          background-color: transparent;
+          border: 1.4px solid $secondary;
+        }
+        &:hover {
+          background-color: #e26460;
+        }
+      }
+    }
+  }
 }
 
 .blog-holder {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	padding-top: 10vh;
-	padding-bottom: 4vh;
-	color: $bg;
-	font-family: "Ubuntu", sans-serif;
-	position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 4vh;
+  color: $bg;
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
 
-	.blog-wrapper {
-		width: 95%;
-		padding: 2rem 0rem;
-		border-radius: 6px;
-		background-color: $primary;
-		display: flex;
-		justify-content: center;
+  .blog-wrapper {
+    width: 95%;
+    padding: 2rem 0rem;
+    border-radius: 6px;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
 
-		.blog {
-			width: 90%;
+    .blog {
+      width: 90%;
 
-			h1 {
-				font-size: clamp(1em, 1.8em, 2em);
-				padding-bottom: 0.8rem;
-				border-bottom: 2px solid $secondary;
-			}
-			.ps {
-				color: $secondary;
-			}
-		}
-	}
-	.parser-holder {
-		padding-top: 0.8rem;
-		padding-bottom: 1.4rem;
+      h1 {
+        font-size: clamp(1em, 1.8em, 2em);
+        padding-bottom: 0.8rem;
+        border-bottom: 2px solid $secondary;
+      }
+      .ps {
+        color: $secondary;
+      }
+    }
+  }
+  .parser-holder {
+    padding-top: 0.8rem;
+    padding-bottom: 1.4rem;
 
-		p {
-			line-height: 24px;
-			font-weight: 300;
-		}
-		a {
-			color: $secondary;
-			text-decoration: solid;
-		}
+    p {
+      line-height: 24px;
+      font-weight: 300;
+    }
+    a {
+      color: $secondary;
+      text-decoration: solid;
+    }
 
-		.image-full {
-			width: 100%;
-			padding-bottom: 1rem;
-		}
-		img {
-			border-radius: 6px;
-			max-width: 100%;
-			max-height: 100%;
-		}
-	}
+    .image-full {
+      width: 100%;
+      padding: 1rem 0rem;
+    }
+    img {
+      border-radius: 6px;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
 }

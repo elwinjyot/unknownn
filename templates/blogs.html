@@ -1,7 +1,5 @@
-{% extends 'base.html' %} {% load static %}
+{% extends 'base.html' %} {% load static %} {% block 'main' %}
 
-
-{% block 'main' %}
 <section id="blogs-holder">
   <div class="blogs-wrapper">
     <div class="recomms">
@@ -10,7 +8,9 @@
         <p>How Why What When</p>
         {% if request.user.is_authenticated %}
         <div class="add-blog">
-          <a href="{% url 'cblogs' %}"><button>Create Blog <i data-feather="plus"></i></button></a>
+          <a href="{% url 'cblogs' %}"
+            ><button>Create Blog <i data-feather="plus"></i></button
+          ></a>
         </div>
         {% endif %}
       </div>
@@ -20,7 +20,10 @@
     {% for blog in blogs %}
     <a href="{% url 'sblog' blog.id %}">
       <div class="blog-item">
-        <div class="thumbnail" style="background-image: url({{blog.thumbnail.uri}});">
+        <div
+          class="thumbnail th{{blog.id}}"
+          style="background-image: url({{blog.thumbnail.url}});"
+        >
           <div class="text">
             <h2>{{blog.title}}{{blog.thumbnail.uri}}</h2>
             <p>{{blog.date_published}} | {{blog.author}}</p>

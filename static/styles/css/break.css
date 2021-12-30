@@ -1,8 +1,6 @@
 @media (min-width: 768px) {
-  .service-details .service-details-wrap {
-    width: 60% !important;
-    -ms-grid-columns: 50% 50% !important;
-        grid-template-columns: 50% 50% !important;
+  .service-details-wrap {
+    width: 75% !important;
   }
   .blog-holder {
     padding-top: 18vh;
@@ -80,6 +78,21 @@
 }
 
 @media (min-width: 992px) {
+  .service-details .cross_btn_large_cont {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .service-details .service-details-wrap {
+    -ms-grid-columns: 50% 50% !important;
+        grid-template-columns: 50% 50% !important;
+  }
+  .service-details .service-details-wrap .sect-1 {
+    padding-bottom: 0rem;
+  }
+  .service-details .service-details-wrap .sect-1 h2 .cross_btn {
+    display: none;
+  }
   #blog-title {
     width: 70% !important;
   }
@@ -132,3 +145,4 @@
         grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+/*# sourceMappingURL=break.css.map */

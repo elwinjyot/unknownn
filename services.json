@@ -9,13 +9,22 @@
 			{
 				"title": "Basic",
 				"details": [
-					{ "feat": "Upto to 5,000 words", "avail": true },
-					{ "feat": "In-depth topic research", "avail": true },
+					{
+						"feat": "Upto to 5,000 words",
+						"avail": true
+					},
+					{
+						"feat": "In-depth topic research",
+						"avail": true
+					},
 					{
 						"feat": "InFormatting | Writing | Editing | Rewriting",
 						"avail": true
 					},
-					{ "feat": "2x revisions", "avail": true },
+					{
+						"feat": "2x revisions",
+						"avail": true
+					},
 					{
 						"feat": "Free: Attractive font and back cover",
 						"avail": true
@@ -33,13 +42,22 @@
 			{
 				"title": "Standard",
 				"details": [
-					{ "feat": "Upto to 8,000 words", "avail": true },
-					{ "feat": "In-depth topic research", "avail": true },
+					{
+						"feat": "Upto to 8,000 words",
+						"avail": true
+					},
+					{
+						"feat": "In-depth topic research",
+						"avail": true
+					},
 					{
 						"feat": "InFormatting | Writing | Editing | Rewriting",
 						"avail": true
 					},
-					{ "feat": "Unlimited revisions", "avail": true },
+					{
+						"feat": "Unlimited revisions",
+						"avail": true
+					},
 					{
 						"feat": "Free: Attractive font and back cover",
 						"avail": true
@@ -57,13 +75,22 @@
 			{
 				"title": "Premium",
 				"details": [
-					{ "feat": "Upto to 10,000 words", "avail": true },
-					{ "feat": "In-depth topic research", "avail": true },
+					{
+						"feat": "Upto to 10,000 words",
+						"avail": true
+					},
+					{
+						"feat": "In-depth topic research",
+						"avail": true
+					},
 					{
 						"feat": "InFormatting | Writing | Editing | Rewriting",
 						"avail": true
 					},
-					{ "feat": "Unlimited revisions", "avail": true },
+					{
+						"feat": "Unlimited revisions",
+						"avail": true
+					},
 					{
 						"feat": "Free: Attractive font and back cover",
 						"avail": true
@@ -83,80 +110,95 @@
 	"podcast-script-writing": {
 		"title": "Podcast Script Writing",
 		"code": "podcast-script-writing",
-		"intro": "Nonfiction ebooks for ex Personal Growth, Self-help, personality development, Business, psychology",
-		"description": "Ebooks are the new way of learning as well as of sharing knowledge via a digital medium. Many readers are starting to prefer ebooks more than paperbacks and knowledgeable people from any field are using ebooks to share their knowledge and also to make a source of income. So, why not you? But writing one takes lots of hassle, that’s where we come to help you to create your ebook on your specific topic and genre. We will draft-write-edit-rewrite your ebook thoroughly till it delivers your aimed message and engages your audience from start to end.",
-		"niche": "We currently write only non-fiction ebooks on topics mentioned below: Self-help, Spirituality, Business & Money, Guides & Tutorials, Personal Finance, and more",
+		"intro": "Imerserse your listeners through engaging podcast episodes.",
+		"description": "Creating a podcast seems easy, just record yourself and upload it.  But there’s much more, It requires structured content that is informative, entertaining, and engaging. Scripting, It plays a vital role in making a good podcast, that’s where we come to do in-depth research of your topic from trusted sources and then turn it into a full-fledged podcast script that matches your voice and immerses your listener to it.",
+		"niche": "Non-fiction narrative, interview & conversational, Hybrid podcast.",
 		"plans": [
 			{
 				"title": "Basic",
 				"details": [
-					{ "feat": "Upto to 5,000 words", "avail": true },
-					{ "feat": "In-depth topic research", "avail": true },
 					{
-						"feat": "InFormatting | Writing | Editing | Rewriting",
-						"avail": true
-					},
-					{ "feat": "2x revisions", "avail": true },
-					{
-						"feat": "Free: Attractive font and back cover",
+						"feat": "Full-fledged script of 1500-2000 words",
 						"avail": true
 					},
 					{
-						"feat": "Creative layout",
+						"feat": "Duration: 10-15 min",
+						"avail": true
+					},
+					{
+						"feat": "1x revision",
+						"avail": true
+					},
+					{
+						"feat": "4 days delivery",
+						"avail": true
+					},
+					{
+						"feat": "Additional show notes",
 						"avail": false
 					}
 				],
 				"pricing": {
-					"INR": 5129,
-					"USD": 69
+					"INR": 2699,
+					"USD": 35
 				}
 			},
 			{
 				"title": "Standard",
 				"details": [
-					{ "feat": "Upto to 8,000 words", "avail": true },
-					{ "feat": "In-depth topic research", "avail": true },
 					{
-						"feat": "InFormatting | Writing | Editing | Rewriting",
-						"avail": true
-					},
-					{ "feat": "Unlimited revisions", "avail": true },
-					{
-						"feat": "Free: Attractive font and back cover",
+						"feat": "Full-fledged script of 3500-4000 words",
 						"avail": true
 					},
 					{
-						"feat": "Creative layout",
+						"feat": "Duration: 25-30 min",
+						"avail": true
+					},
+					{
+						"feat": "2x revision",
+						"avail": true
+					},
+					{
+						"feat": "5 days delivery",
+						"avail": true
+					},
+					{
+						"feat": "Additional show notes",
 						"avail": true
 					}
 				],
 				"pricing": {
-					"INR": 7360,
-					"USD": 99
+					"INR": 4399,
+					"USD": 59
 				}
 			},
 			{
 				"title": "Premium",
 				"details": [
-					{ "feat": "Upto to 10,000 words", "avail": true },
-					{ "feat": "In-depth topic research", "avail": true },
 					{
-						"feat": "InFormatting | Writing | Editing | Rewriting",
-						"avail": true
-					},
-					{ "feat": "Unlimited revisions", "avail": true },
-					{
-						"feat": "Free: Attractive font and back cover",
+						"feat": "Full-fledged script of 5500-6000 words",
 						"avail": true
 					},
 					{
-						"feat": "Creative layout",
+						"feat": "Duration: 45-60 min",
+						"avail": true
+					},
+					{
+						"feat": "3x revision",
+						"avail": true
+					},
+					{
+						"feat": "7 days delivery",
+						"avail": true
+					},
+					{
+						"feat": "Additional show notes",
 						"avail": true
 					}
 				],
 				"pricing": {
-					"INR": 8847,
-					"USD": 119
+					"INR": 5999,
+					"USD": 80
 				}
 			}
 		]

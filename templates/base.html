@@ -1,121 +1,167 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,500;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'styles/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/css/break.css' %}" />
+    <title>Unknownn.ent</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,500;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'styles/css/main.css' %}" />
-  <link rel="stylesheet" href="{% static 'styles/css/break.css' %}" />
-  <title>Unknownn.ent</title>
-</head>
-
-<body>
-  <header id="navigation-container">
-    <nav id="head">
-      <div class="navbar__left">
-        <div id="logo">
-          <img src="{% static 'images/logo.svg' %}" alt="logo" />
+  <body>
+    <header id="navigation-container">
+      <nav id="head">
+        <div class="navbar__left">
+          <div id="logo">
+            <img src="{% static 'images/logo.svg' %}" alt="logo" />
+          </div>
+          <p>Writers Desk</p>
         </div>
-        <p>Writers Desk</p>
-      </div>
-      <div class="nav_btns">
-        <button class="nav__ham btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="feather feather-menu" style="color: white;">
-            <line style="transform-origin: center;" class="line1" x1="3" y1="12" x2="21" y2="12"></line>
-            <line style="transform-origin: center;" class="line2" x1="3" y1="6" x2="21" y2="6"></line>
-            <line style="transform-origin: center;" class="line3" x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-          <!-- <i style="color: white;" data-feather="menu"></i> -->
-        </button>
-      </div>
-      <ul class="navbar__right large" data-open="false">
+        <div class="nav_btns">
+          <button class="nav__ham btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-menu"
+              style="color: white"
+            >
+              <line
+                style="transform-origin: center"
+                class="line1"
+                x1="3"
+                y1="12"
+                x2="21"
+                y2="12"
+              ></line>
+              <line
+                style="transform-origin: center"
+                class="line2"
+                x1="3"
+                y1="6"
+                x2="21"
+                y2="6"
+              ></line>
+              <line
+                style="transform-origin: center"
+                class="line3"
+                x1="3"
+                y1="18"
+                x2="21"
+                y2="18"
+              ></line>
+            </svg>
+            <!-- <i style="color: white;" data-feather="menu"></i> -->
+          </button>
+        </div>
+        <ul class="navbar__right large" data-open="false">
+          <li class="nav-li">
+            <a
+              class="nav-item"
+              style="padding: 0.6rem 1rem"
+              data-link="/#about-section"
+              >ABOUT</a
+            >
+          </li>
+          <li class="nav-li">
+            <a
+              class="nav-item"
+              style="padding: 0.6rem 1rem"
+              data-link="/#service-section"
+              >SERVICES</a
+            >
+          </li>
+          <li class="nav-li">
+            <a href="{% url 'blogs' %}" style="padding: 0.6rem 1rem">BLOGS</a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-li">
+            <a href="{% url 'blogs' %}" style="padding: 0.6rem 1rem"
+              >DASHBOARD</a
+            >
+          </li>
+          {% endif %} {% block 'more-nav' %}{% endblock %}
+        </ul>
+      </nav>
+      <ul class="navbar__right mobile" data-open="false">
         <li class="nav-li">
-          <a class="nav-item" style="padding: 0.6rem 1rem" data-link="/#about-section">ABOUT</a>
+          <a class="nav-item" data-link="/#about-section" href="">ABOUT</a>
         </li>
         <li class="nav-li">
-          <a class="nav-item" style="padding: 0.6rem 1rem" data-link="/#service-section">SERVICES</a>
+          <a class="nav-item" data-link="/#service-section" href="">SERVICES</a>
         </li>
         <li class="nav-li">
-          <a href="{% url 'blogs' %}" style="padding: 0.6rem 1rem">BLOGS</a>
+          <a href="{% url 'blogs' %}">BLOGS</a>
         </li>
-        {% if request.user.is_authenticated %}
         <li class="nav-li">
-          <a href="{% url 'blogs' %}" style="padding: 0.6rem 1rem">DASHBOARD</a>
+          <a href="{% url 'blogs' %}">DASHBOARD</a>
         </li>
-        {% endif %}
-        {% block 'more-nav' %}{% endblock %}
+        {% block 'more-nav-mobile' %} {% endblock %}
       </ul>
-    </nav>
-    <ul class="navbar__right mobile" data-open="false">
-      <li class="nav-li">
-        <a class="nav-item" data-link="/#about-section" href="">ABOUT</a>
-      </li>
-      <li class="nav-li">
-        <a class="nav-item" data-link="/#service-section" href="">SERVICES</a>
-      </li>
-      <li class="nav-li">
-        <a href="{% url 'blogs' %}">BLOGS</a>
-      </li>
-      <li class="nav-li">
-        <a href="{% url 'blogs' %}">DASHBOARD</a>
-      </li>
-      {% block 'more-nav-mobile' %}
-      {% endblock %}
-    </ul>
-  </header>
-  <main class="container">{% block 'main' %} {% endblock %}</main>
-  <footer>
-    <div id="footer-wrapper">
-      <section id="part-1">
-        <h2>UNKNOWNN</h2>
-        <p>Made in India 🇮🇳</p>
-      </section>
-      <section id="part-2">
-        <div>
-          <p>Editor Details:</p>
-        </div>
-        <div>
-          <p>Contact developer:</p>
-          <p>Mobile - 12345678890</p>
-          <p>Email - developers@unknownn.com</p>
-        </div>
-      </section>
-      <section id="part-3">
-        <p>Designed, Developed and Managed by Elwin Jyothis</p>
-        <p>All rights reserved &copy;</p>
-      </section>
-    </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  <script>
-    feather.replace()
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@2.22.2/dist/editor.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@2.6.1/dist/bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/editorjs-paragraph-with-alignment@3.0.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@2.4.6/dist/bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@2.4.0/dist/bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@1.3.0/dist/bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@1.6.2/dist/bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.6.1/dist/bundle.min.js"></script>
-  <script src="{% static 'scripts/edjs-parser.js' %}"></script>
-  <script src="{% static 'scripts/index.js' %}"></script>
-  <script src="{% static 'scripts/animate.js' %}"></script>
-  <script src="{% static 'scripts/createblog.js' %}" type="module"></script>
-  {% block scripts %}
-  {% endblock %}
-</body>
-
+    </header>
+    <main class="container">{% block 'main' %} {% endblock %}</main>
+    <footer>
+      <div id="footer-wrapper">
+        <section id="part-1">
+          <h2>UNKNOWNN</h2>
+          <p>Made in India 🇮🇳</p>
+        </section>
+        <section id="part-2">
+          <div>
+            <p>Editor Details:</p>
+          </div>
+          <div>
+            <p>Contact developer:</p>
+            <p>Mobile - 12345678890</p>
+            <p>Email - developers@unknownn.com</p>
+          </div>
+        </section>
+        <section id="part-3">
+          <p>Designed, Developed and Managed by Elwin Jyothis</p>
+          <p>All rights reserved &copy;</p>
+        </section>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@2.22.2/dist/editor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@2.6.1/dist/bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/editorjs-paragraph-with-alignment@3.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@2.4.6/dist/bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@2.4.0/dist/bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@1.3.0/dist/bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@1.6.2/dist/bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.6.1/dist/bundle.min.js"></script>
+    <script src="{% static 'scripts/edjs-parser.js' %}"></script>
+    <script src="{% static 'scripts/index.js' %}"></script>
+    <script src="{% static 'scripts/animate.js' %}"></script>
+    {% block scripts %} {% endblock %}
+  </body>
 </html>

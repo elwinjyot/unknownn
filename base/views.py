@@ -10,6 +10,9 @@ from django.conf import settings
 
 # Create your views here.
 
+def is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+
 def index(req):
     return render(req, 'index.html')
 
@@ -24,13 +27,11 @@ def blogs(req):
 
 @requires_csrf_token
 def createBlog(req):
-    if req.is_ajax and req.method == 'POST':
+    if is_ajax(req) and req.method == 'POST':
         title = req.POST["title"]
         content = req.POST["content"]
         img = req.FILES["image"]
-        print(title)
-        print(img)
-        # Blog.objects.create(title=title, content=content, author='Aman Burman')
+        Blog.objects.create(title=title, content=content, author='Aman Burman', thumbnail=img)
         return JsonResponse({"status": 200}, safe=False)
 
     return render(req, 'createBlog.html')
